@@ -39,10 +39,11 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   }
 
   void _submitForm() {
+
     if (_formKey.currentState!.validate()) {
       ScaffoldMessenger.of(
         context,
-      ).showSnackBar(const SnackBar(content: Text('Registration successful!')));
+      ).showSnackBar(const SnackBar(content: Text('Registration successful! ${_nameController.text}')));
     }
   }
 
@@ -57,6 +58,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
           child: Column(
             children: [
               TextFormField(
+                
                 controller: _nameController,
                 decoration: const InputDecoration(
                   labelText: 'Full Name',
